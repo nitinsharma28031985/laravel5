@@ -1,0 +1,25 @@
+The Laravel uses the composer to manage your dependencies, so the next step is install Composer.
+$curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+
+Change the permissions to run the composer command without sudo
+$sudo chown -R $USER ~/.composer/
+
+Alternatively, you may also init a Laravel project by issuing the Composer create-project command in your terminal:
+$composer create-project --prefer-dist laravel/laravel project-name
+
+Or install Laravel installer to use the following command “laravel new project”:
+$composer global require "laravel/installer"
+
+For the laravel command works we need append a line in bashrc file, if you only uses terminal.
+$echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+Or append a line in zshrc if you uses ZSH.
+$echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >>  ~/.zshrc
+source ~/.zshrc
+
+Restart the terminal. And initialize a Laravel project.
+$laravel new blog
+
+Run the Laravel server. Enjoy!
+$php artisan serve
